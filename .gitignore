@@ -1,0 +1,16 @@
+# deploy key (never commit)
+deploy_key_homeassistant
+deploy_key_homeassistant.pub
+
+# build output and SDK state
+build/
+RPMS/
+.sfdk/
+documentation.list
+*.rpm
+*.tar.gz
+
+# editor / OS
+*.swp
+*~
+.DS_Store
