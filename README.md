@@ -104,7 +104,7 @@ To restart the app from SSH, kill **only** this process (full command line
 
 ## 6. Licence
 
-MIT (see the spec file). Home Assistant is a trademark of the Home Assistant
+GPLv3, see [LICENSE](LICENSE). Home Assistant is a trademark of the Home Assistant
 project; this app only embeds its web interface.
 
 ## Privacy
