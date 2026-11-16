@@ -1,8 +1,8 @@
 Name:       harbour-homeassistant
-Version:    1.0.0
+Version:    1.1.0
 Release:    1
 Summary:    Fullscreen Home Assistant web interface for Sailfish OS
-License:    MIT
+License:    GPLv3
 URL:        https://github.com/mig1984/harbour-homeassistant
 BuildArch:  noarch
 Source0:    %{name}-%{version}.tar.gz
@@ -48,11 +48,16 @@ done
 
 %files
 %defattr(-,root,root,-)
+%license LICENSE
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
+* Mon Nov 16 2026 Jan Molič <jan.molic@1984.cz> - 1.1.0-1
+- GPLv3 license
+- Finnish and Simplified Chinese translations
+
 * Mon Nov 16 2026 Jan Molič <jan.molic@1984.cz> - 1.0.0-1
 - First public release: fullscreen Sailfish WebView, configurable URL,
   suppressed browser password dialog, view paused while minimized

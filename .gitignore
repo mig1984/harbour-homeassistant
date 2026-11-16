@@ -14,3 +14,7 @@ documentation.list
 *.swp
 *~
 .DS_Store
+
+# build output
+*.qm
+documentation.list

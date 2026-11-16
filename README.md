@@ -106,3 +106,7 @@ To restart the app from SSH, kill **only** this process (full command line
 
 MIT (see the spec file). Home Assistant is a trademark of the Home Assistant
 project; this app only embeds its web interface.
+
+## Privacy
+
+The app loads only the Home Assistant address you configure, in its own web view. It does not collect or send any other data.
