@@ -7,7 +7,7 @@ URL:        https://github.com/mig1984/harbour-homeassistant
 BuildArch:  noarch
 Source0:    %{name}-%{version}.tar.gz
 
-Requires:   sailfishsilica-qt5 >= 0.10.9
+Requires:   sailfishsilica-qt5
 Requires:   libsailfishapp-launcher
 Requires:   sailfish-components-webview-qt5
 Requires:   sailfish-components-webview-qt5-popups
