@@ -14,6 +14,8 @@ Requires:   sailfish-components-webview-qt5-popups
 Requires:   sailfish-components-webview-qt5-pickers
 Requires:   nemo-qml-plugin-configuration-qt5
 
+BuildRequires:  qt5-qttools-linguist
+
 %description
 Homeassistant shows the Home Assistant web interface fullscreen in the
 Sailfish WebView. The URL is configurable in the app settings
@@ -23,13 +25,18 @@ Sailfish WebView. The URL is configurable in the app settings
 %setup -q
 
 %build
-# nothing to build, pure QML
+# pure QML; only compile translations
+for ts in translations/*.ts; do
+    lrelease "$ts" -qm "${ts%.ts}.qm"
+done
 
 %install
 rm -rf %{buildroot}
 install -d %{buildroot}%{_datadir}/%{name}/qml/pages
 install -d %{buildroot}%{_datadir}/%{name}/qml/components
 install -m 644 qml/%{name}.qml %{buildroot}%{_datadir}/%{name}/qml/
+install -d %{buildroot}%{_datadir}/%{name}/translations
+install -m 644 translations/*.qm %{buildroot}%{_datadir}/%{name}/translations/
 install -m 644 qml/pages/*.qml %{buildroot}%{_datadir}/%{name}/qml/pages/
 install -m 644 qml/components/*.qml %{buildroot}%{_datadir}/%{name}/qml/components/
 install -d %{buildroot}%{_datadir}/applications
