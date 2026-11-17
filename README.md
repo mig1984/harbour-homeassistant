@@ -5,7 +5,7 @@ Sailfish OS 5.x (Jolla). A thin wrapper around the Sailfish WebView (Gecko) with
 a configurable URL, so the Home Assistant dashboard opens like a native app
 instead of a browser tab.
 
-Version: 1.1.1 (see `rpm/harbour-homeassistant.spec`). The UI source language
+Version: 1.2.0 (see `rpm/harbour-homeassistant.spec`). The UI source language
 is Czech; translations exist for English, Finnish, German, Spanish, French,
 Italian, Dutch, Polish, Russian, Swedish and Chinese (simplified).
 
@@ -32,8 +32,12 @@ Italian, Dutch, Polish, Russian, Swedish and Chinese (simplified).
 - **Paused while minimized**: `WebView.hidden` follows `Qt.application.active`,
   so the page stops repainting in the background and Home Assistant can suspend
   its work.
-- **Buttons** at the bottom right: reload and settings (semi-transparent). The
-  page has no pulley menu because the WebView is not a Flickable.
+- **Pulley menu**: pull down to open Settings and Reload. The native WebView
+  consumes touch events, so the gesture is captured by a small invisible area
+  at the top edge (taps in that strip do not reach Home Assistant).
+- **First-run hint**: until a URL has been saved, no web page is loaded. The
+  empty page shows a hint (with an animated pull-down gesture) pointing to the
+  pulley menu where the address is set.
 
 ---
 
@@ -44,9 +48,12 @@ Path: `/apps/harbour-homeassistant/`
 | Key | Default | Meaning |
 |---|---|---|
 | `url` | `http://homeassistant.local:8123` | Home Assistant base URL |
+| `urlConfigured` | `false` | Set to `true` when a URL is saved; hides the first-run hint |
 
 The stored URL is applied once it is loaded, so the default is never requested
-first (`MainPage.loadSavedUrl()`).
+first (`MainPage.loadSavedUrl()`). Users upgrading from a version without
+`urlConfigured` are migrated automatically when their stored URL differs from
+the default.
 
 ---
 
@@ -58,7 +65,7 @@ rpm/harbour-homeassistant.spec      noarch RPM (Requires: sailfish-components-we
                                     -popups, -pickers, nemo-qml-plugin-configuration-qt5)
 icons/<size>/harbour-homeassistant.png
 qml/harbour-homeassistant.qml       ApplicationWindow (no cover component)
-qml/pages/MainPage.qml              WebView, popup provider, reload/settings buttons
+qml/pages/MainPage.qml              WebView, popup provider, pulley menu, first-run hint
 qml/pages/SettingsPage.qml          URL field, Save, Default address
 qml/components/NoPasswordPopup.qml  empty stand-in for the password manager popup
 docs/                               screenshots for this README
@@ -74,6 +81,9 @@ docs/                               screenshots for this README
 - No cover page of its own: the home screen card shows the live WebView
   content scaled down (see screenshot).
 - HTTPS with self-signed certificates is handled by the WebView's own dialogs.
+- The invisible pull area covers a narrow strip at the top edge (about
+  `Theme.paddingLarge` plus the display cutout), so taps in that strip go to the
+  pulley gesture rather than to the web page.
 
 ---
 
@@ -87,9 +97,14 @@ rpmbuild -bb rpm/harbour-homeassistant.spec \
 ```
 
 with `build/SOURCES/harbour-homeassistant-<version>.tar.gz` containing
-`harbour-homeassistant-<version>/{qml,icons,harbour-homeassistant.desktop}`.
-On some hosts `--define "__spec_install_post %{nil}"` is needed. Output:
-`build/RPMS/noarch/`. The Sailfish SDK (`sfdk build`) works as well.
+`harbour-homeassistant-<version>/{qml,icons,translations,harbour-homeassistant.desktop,LICENSE}`.
+The spec compiles the translations with `lrelease`, so the tarball must include
+`translations/`. On some hosts `--define "__spec_install_post %{nil}"` is needed.
+Output: `build/RPMS/noarch/`. The Sailfish SDK is the preferred build path:
+
+```
+sfdk -c target=SailfishOS-5.1.0.11-aarch64 build
+```
 
 Install on the phone (developer mode, SSH):
 

@@ -23,4 +23,27 @@
         <translation>Adresse par défaut</translation>
     </message>
 </context>
+<context>
+    <name>MainPage</name>
+    <message>
+        <location filename="../qml/pages/MainPage.qml" line="57" />
+        <source>Nastavení</source>
+        <translation>Paramètres</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MainPage.qml" line="61" />
+        <source>Obnovit</source>
+        <translation>Actualiser</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MainPage.qml" line="103" />
+        <source>Adresa Home Assistant není nastavená</source>
+        <translation>L'adresse de Home Assistant n'est pas configurée</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MainPage.qml" line="104" />
+        <source>Táhněte dolů z horního okraje pro nastavení adresy</source>
+        <translation>Tirez depuis le bord supérieur pour configurer l'adresse</translation>
+    </message>
+</context>
 </TS>

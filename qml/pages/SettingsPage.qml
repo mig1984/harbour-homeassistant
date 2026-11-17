@@ -10,6 +10,7 @@ Page {
         id: settings
         path: "/apps/harbour-homeassistant"
         property string url: "http://homeassistant.local:8123"
+        property bool urlConfigured: false
     }
 
     SilicaFlickable {
@@ -55,6 +56,7 @@ Page {
         if (u.length === 0) return
         if (u.indexOf("://") < 0) u = "http://" + u
         settings.url = u
+        settings.urlConfigured = true
         pageStack.pop()
     }
 }

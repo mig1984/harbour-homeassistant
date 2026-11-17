@@ -23,4 +23,27 @@
         <translation>Dirección predeterminada</translation>
     </message>
 </context>
+<context>
+    <name>MainPage</name>
+    <message>
+        <location filename="../qml/pages/MainPage.qml" line="57" />
+        <source>Nastavení</source>
+        <translation>Ajustes</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MainPage.qml" line="61" />
+        <source>Obnovit</source>
+        <translation>Actualizar</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MainPage.qml" line="103" />
+        <source>Adresa Home Assistant není nastavená</source>
+        <translation>La dirección de Home Assistant no está configurada</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MainPage.qml" line="104" />
+        <source>Táhněte dolů z horního okraje pro nastavení adresy</source>
+        <translation>Tira desde el borde superior para configurar la dirección</translation>
+    </message>
+</context>
 </TS>

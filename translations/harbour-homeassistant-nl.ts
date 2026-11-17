@@ -23,4 +23,27 @@
         <translation>Standaardadres</translation>
     </message>
 </context>
+<context>
+    <name>MainPage</name>
+    <message>
+        <location filename="../qml/pages/MainPage.qml" line="57" />
+        <source>Nastavení</source>
+        <translation>Instellingen</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MainPage.qml" line="61" />
+        <source>Obnovit</source>
+        <translation>Vernieuwen</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MainPage.qml" line="103" />
+        <source>Adresa Home Assistant není nastavená</source>
+        <translation>Het Home Assistant-adres is niet ingesteld</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MainPage.qml" line="104" />
+        <source>Táhněte dolů z horního okraje pro nastavení adresy</source>
+        <translation>Trek vanaf de bovenrand omlaag om het adres in te stellen</translation>
+    </message>
+</context>
 </TS>

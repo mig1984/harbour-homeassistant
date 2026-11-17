@@ -1,5 +1,5 @@
 Name:       harbour-homeassistant
-Version:    1.1.1
+Version:    1.2.0
 Release:    1
 Summary:    Fullscreen Home Assistant web interface for Sailfish OS
 License:    GPLv3
@@ -54,6 +54,16 @@ done
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
+* Tue Nov 17 2026 Jan Molič <jan.molic@1984.cz> - 1.2.0-1
+- Pull-down menu with Settings and Reload replaces the two corner buttons
+- First-run hint when the Home Assistant address has not been set yet
+- Fixed the pull-down gesture on the first-run screen
+- Invisible pull area at the top edge (the native WebView consumes touches)
+
+* Mon Nov 16 2026 Jan Molič <jan.molic@1984.cz> - 1.1.1-1
+- Translations: English, German, Spanish, French, Italian, Dutch, Polish,
+  Russian and Swedish
+
 * Mon Nov 16 2026 Jan Molič <jan.molic@1984.cz> - 1.1.0-1
 - GPLv3 license
 - Finnish and Simplified Chinese translations
