@@ -1,5 +1,5 @@
 Name:       harbour-homeassistant
-Version:    1.1.0
+Version:    1.1.1
 Release:    1
 Summary:    Fullscreen Home Assistant web interface for Sailfish OS
 License:    GPLv3
