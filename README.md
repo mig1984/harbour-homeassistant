@@ -5,7 +5,7 @@ Sailfish OS 5.x (Jolla). A thin wrapper around the Sailfish WebView (Gecko) with
 a configurable URL, so the Home Assistant dashboard opens like a native app
 instead of a browser tab.
 
-Version: 1.2.0 (see `rpm/harbour-homeassistant.spec`). The UI source language
+Version: 1.2.1 (see `rpm/harbour-homeassistant.spec`). The UI source language
 is Czech; translations exist for English, Finnish, German, Spanish, French,
 Italian, Dutch, Polish, Russian, Swedish and Chinese (simplified).
 

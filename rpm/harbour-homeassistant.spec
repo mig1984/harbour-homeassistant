@@ -1,5 +1,5 @@
 Name:       harbour-homeassistant
-Version:    1.2.0
+Version:    1.2.1
 Release:    1
 Summary:    Fullscreen Home Assistant web interface for Sailfish OS
 License:    GPLv3
@@ -20,6 +20,25 @@ BuildRequires:  qt5-qttools-linguist
 Homeassistant shows the Home Assistant web interface fullscreen in the
 Sailfish WebView. The URL is configurable in the app settings
 (default http://homeassistant.local:8123). Logins are kept in localStorage/cookies.
+
+# This description section includes metadata for SailfishOS:Chum, see
+# https://github.com/sailfishos-chum/main/blob/main/Metadata.md
+%if 0%{?_chum}
+Title: Home Assistant
+Type: desktop-application
+DeveloperName: Jan Molič
+Categories:
+ - Network
+Custom:
+  Repo: https://github.com/mig1984/harbour-homeassistant
+PackageIcon: https://github.com/mig1984/harbour-homeassistant/raw/main/icons/172x172/harbour-homeassistant.png
+Screenshots:
+ - https://github.com/mig1984/harbour-homeassistant/raw/main/docs/screenshot-dashboard.png
+ - https://github.com/mig1984/harbour-homeassistant/raw/main/docs/screenshot-home-card.png
+Links:
+  Homepage: https://github.com/mig1984/harbour-homeassistant
+  Bugtracker: https://github.com/mig1984/harbour-homeassistant/issues
+%endif
 
 %prep
 %setup -q
@@ -54,6 +73,9 @@ done
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 %changelog
+* Sat Nov 21 2026 Jan Molič <jan.molic@1984.cz> - 1.2.1-1
+- Chum metadata (AppStream-style) in the spec description for the SailfishOS:Chum GUI
+
 * Tue Nov 17 2026 Jan Molič <jan.molic@1984.cz> - 1.2.0-1
 - Pull-down menu with Settings and Reload replaces the two corner buttons
 - First-run hint when the Home Assistant address has not been set yet
